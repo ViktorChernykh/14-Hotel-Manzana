@@ -7,7 +7,7 @@
 //
 
 public struct PasswordRule: Rule {
-    //MARK: - Stored Properties
+    // MARK: - Stored Properties
     private (set) var regEx: String = "^.{6,15}$"
     private (set) var empty: String = "Empty password"
     private (set) var failure: String = "Invalid password"

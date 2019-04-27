@@ -7,7 +7,7 @@
 //
 
 public struct PhoneNoRule: Rule {
-    //MARK: - Stored Properties
+    // MARK: - Stored Properties
     private (set) var regEx: String = "[0-9]{10,14}"
     private (set) var empty: String = "Empty phone"
     private (set) var failure: String = "Invalid phone"

@@ -7,7 +7,7 @@
 //
 
 public struct EmailRule: Rule {
-    //MARK: - Stored Properties
+    // MARK: - Stored Properties
     private (set) var regEx: String = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
     private (set) var empty: String = "Empty email"
     private (set) var failure: String = "Invalid email"

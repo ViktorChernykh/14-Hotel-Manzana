@@ -9,7 +9,7 @@
 import Foundation
 
 class Guest {
-    //MARK: - Stored Properties
+    // MARK: - Stored Properties
     var firstName: String
     var lastName: String
     var email: String
@@ -21,6 +21,7 @@ class Guest {
     var roomType: RoomType
     var totalPrice: Int
     
+    // MARK: - Initilaizer
     init(firstName: String,
         lastName: String,
         email: String,

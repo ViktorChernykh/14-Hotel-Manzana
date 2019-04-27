@@ -7,7 +7,7 @@
 //
 
 public struct StringWithFirstLetterCapsRule: Rule {
-    //MARK: - Stored Properties
+    // MARK: - Stored Properties
     private (set) var regEx: String = "[A-ZА-Я]+[a-zA-Z а-яА-Я]*$"
     private (set) var empty: String = "Empty String"
     private (set) var failure: String = "The first letter must be uppercase"

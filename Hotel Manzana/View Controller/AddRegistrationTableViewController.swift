@@ -158,7 +158,7 @@ class AddRegistrationTableViewController: UITableViewController {
             let numberOfGuests = Int(numberOfAdultsStepper.value + numberOfChildrenStepper.value)
             var numberOfGuestsValid: String
             if numberOfGuests > roomNumberOfGuests {
-                numberOfGuestsValid = "enumeration"
+                numberOfGuestsValid = "enumeration of guest"
             } else {
                 numberOfGuestsValid = ""
             }
@@ -260,33 +260,4 @@ extension AddRegistrationTableViewController {
 
         controller.selectedRoomType = roomType
     }
-}
-
-extension AddRegistrationTableViewController {
-
-    
-//    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-//        textField.resignFirstResponder()
-//        guard let text = textField.text else { return false }
-//
-//        switch textField {
-//        case firstNameField:
-//            let isValid = isTextValid(text)
-//            changeBorderColor(firstNameField, isValid)
-//
-//        case lastNameField:
-//            let isValid = isTextValid(text)
-//            changeBorderColor(lastNameField, isValid)
-//
-//        case emailField:
-//            let isValid = isEmailValid(text)
-//                changeBorderColor(emailField, isValid)
-//
-//        default:
-//            break
-//        }
-//        return true
-//    }
-    
-
 }
