@@ -46,10 +46,8 @@ struct Validation {
         let errorColor = UIColor(red: 255, green: 0, blue: 0, alpha: 0.2)
         if result.isEmpty {
             textField.backgroundColor = .white
-            //textField.superview?.backgroundColor = .white
         } else {
             textField.backgroundColor = errorColor
-            //textField.superview?.backgroundColor = errorColor
         }
     }
     
