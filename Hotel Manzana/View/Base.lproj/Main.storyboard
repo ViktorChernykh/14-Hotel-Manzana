@@ -489,41 +489,29 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="checkmark" indentationWidth="10" reuseIdentifier="RoomCell" id="PVc-V1-84f" customClass="RoomCell" customModule="Hotel_Manzana" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="checkmark" indentationWidth="10" reuseIdentifier="RoomCell" textLabel="HDg-a9-lLf" detailTextLabel="3XY-xm-YLU" style="IBUITableViewCellStyleValue1" id="PVc-V1-84f" customClass="RoomCell" customModule="Hotel_Manzana" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="PVc-V1-84f" id="6M1-u1-VGy">
                                     <rect key="frame" x="0.0" y="0.0" width="370" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lVd-LB-cHN">
-                                            <rect key="frame" x="20" y="11" width="295" height="22"/>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="HDg-a9-lLf">
+                                            <rect key="frame" x="20" y="12" width="33.5" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="100$" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jRw-Tg-DV1">
-                                            <rect key="frame" x="323" y="11" width="39" height="22"/>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3XY-xm-YLU">
+                                            <rect key="frame" x="326" y="12" width="44" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
-                                    <constraints>
-                                        <constraint firstItem="jRw-Tg-DV1" firstAttribute="leading" secondItem="lVd-LB-cHN" secondAttribute="trailing" constant="8" id="6VT-mA-3me"/>
-                                        <constraint firstItem="jRw-Tg-DV1" firstAttribute="leading" secondItem="6M1-u1-VGy" secondAttribute="leading" constant="323" id="A5q-jR-KBA"/>
-                                        <constraint firstItem="lVd-LB-cHN" firstAttribute="top" secondItem="6M1-u1-VGy" secondAttribute="topMargin" id="DGN-fQ-gKA"/>
-                                        <constraint firstItem="jRw-Tg-DV1" firstAttribute="top" secondItem="6M1-u1-VGy" secondAttribute="topMargin" id="Dtk-Ay-jGD"/>
-                                        <constraint firstItem="lVd-LB-cHN" firstAttribute="leading" secondItem="6M1-u1-VGy" secondAttribute="leadingMargin" id="GD1-NM-SRm"/>
-                                        <constraint firstItem="jRw-Tg-DV1" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="6M1-u1-VGy" secondAttribute="trailingMargin" id="J5v-DF-zGc"/>
-                                        <constraint firstItem="lVd-LB-cHN" firstAttribute="bottom" secondItem="6M1-u1-VGy" secondAttribute="bottomMargin" id="d2R-sk-u8e"/>
-                                        <constraint firstItem="jRw-Tg-DV1" firstAttribute="bottom" secondItem="6M1-u1-VGy" secondAttribute="bottomMargin" id="nU7-TC-7gW"/>
-                                    </constraints>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <outlet property="roomNameLabel" destination="lVd-LB-cHN" id="FpQ-Vq-6U6"/>
-                                    <outlet property="roomPriceLabel" destination="jRw-Tg-DV1" id="VGO-BI-l1K"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

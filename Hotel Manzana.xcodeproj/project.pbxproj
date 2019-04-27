@@ -17,7 +17,6 @@
 		693DA53F226E2FB00076BCA9 /* AddRegistrationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693DA53E226E2FB00076BCA9 /* AddRegistrationTableViewController.swift */; };
 		771B3B522270ECD8008180D8 /* RoomTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771B3B512270ECD8008180D8 /* RoomTableViewController.swift */; };
 		77A881FD2273164D009F7B8A /* AddRegistration+Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A881FC2273164D009F7B8A /* AddRegistration+Keyboard.swift */; };
-		77AA632A22737DAD001CA064 /* RoomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77AA632922737DAD001CA064 /* RoomCell.swift */; };
 		77AA632C2273AFD0001CA064 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77AA632B2273AFD0001CA064 /* Validation.swift */; };
 		77AEFADC2274A14E00841160 /* Rule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77AEFADB2274A14E00841160 /* Rule.swift */; };
 		77AEFADE2274A1D300841160 /* AlphabeticStringWithSpaceRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77AEFADD2274A1D300841160 /* AlphabeticStringWithSpaceRule.swift */; };
@@ -43,7 +42,6 @@
 		693DA53E226E2FB00076BCA9 /* AddRegistrationTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRegistrationTableViewController.swift; sourceTree = "<group>"; };
 		771B3B512270ECD8008180D8 /* RoomTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomTableViewController.swift; sourceTree = "<group>"; };
 		77A881FC2273164D009F7B8A /* AddRegistration+Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddRegistration+Keyboard.swift"; sourceTree = "<group>"; };
-		77AA632922737DAD001CA064 /* RoomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomCell.swift; sourceTree = "<group>"; };
 		77AA632B2273AFD0001CA064 /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
 		77AEFADB2274A14E00841160 /* Rule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rule.swift; sourceTree = "<group>"; };
 		77AEFADD2274A1D300841160 /* AlphabeticStringWithSpaceRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlphabeticStringWithSpaceRule.swift; sourceTree = "<group>"; };
@@ -119,7 +117,6 @@
 			children = (
 				6912221C2268FD9A003364A8 /* LaunchScreen.storyboard */,
 				691222172268FD96003364A8 /* Main.storyboard */,
-				77AA632922737DAD001CA064 /* RoomCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -255,7 +252,6 @@
 				77AEFAE92274B17400841160 /* GuestTableViewController.swift in Sources */,
 				77BE06932272166200D4EB69 /* RuleType.swift in Sources */,
 				77AA632C2273AFD0001CA064 /* Validation.swift in Sources */,
-				77AA632A22737DAD001CA064 /* RoomCell.swift in Sources */,
 				77AEFAEB2274B3CD00841160 /* Guest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

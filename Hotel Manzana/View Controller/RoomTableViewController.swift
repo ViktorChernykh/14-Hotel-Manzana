@@ -24,10 +24,10 @@ class RoomTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "RoomCell", for: indexPath) as! RoomCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "RoomCell", for: indexPath)
         let row = indexPath.row
-        cell.roomNameLabel.text = "\(rooms[row].name)"
-        cell.roomPriceLabel.text = "\(rooms[row].price) $"
+        cell.textLabel!.text = "\(rooms[row].name)"
+        cell.detailTextLabel!.text = "\(rooms[row].price) $"
         if let selectedRoom = selectedRoomType, selectedRoom.id == row {
             cell.accessoryType = .checkmark
         } else {
