@@ -15,9 +15,9 @@ struct RoomType {
     
     static var all: [RoomType] {
         return [
-            RoomType(id: 0, name: "Two Queens", shortName: "2Q", numberOfGuests: 2,price: 179),
-            RoomType(id: 1, name: "One King", shortName: "K", numberOfGuests: 3,price: 209),
-            RoomType(id: 2, name: "Penthouse Suite", shortName: "PHS", numberOfGuests: 4,price: 309),
+            RoomType(id: 0, name: "Two Queens", shortName: "2Q", numberOfGuests: 2, price: 179),
+            RoomType(id: 1, name: "One King", shortName: "K", numberOfGuests: 3, price: 209),
+            RoomType(id: 2, name: "Penthouse Suite", shortName: "PHS", numberOfGuests: 4, price: 309),
         ]
     }
 }

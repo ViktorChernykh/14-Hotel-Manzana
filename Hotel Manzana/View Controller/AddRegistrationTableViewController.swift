@@ -22,6 +22,8 @@ class AddRegistrationTableViewController: UITableViewController {
     @IBOutlet weak var numberOfAdultsStepper: UIStepper!
     @IBOutlet weak var numberOfChildrenLabel: UILabel!
     @IBOutlet weak var numberOfChildrenStepper: UIStepper!
+    @IBOutlet weak var adultsLabel: UILabel!
+    @IBOutlet weak var childrenLabel: UILabel!
     @IBOutlet weak var wifiSwitch: UISwitch!
     @IBOutlet weak var wifiLabel: UILabel!
     @IBOutlet weak var roomLabel: UILabel!
@@ -152,23 +154,37 @@ class AddRegistrationTableViewController: UITableViewController {
         validation.giveTextFieldColor(emailField, with: emailValid)
         validation.giveLabelColor(roomLabel, with: choceRoomValid)
         
-        if firstNameValid.isEmpty &&
-            lastNameValid.isEmpty &&
-            emailValid.isEmpty &&
-            roomType != nil {
+        if let roomNumberOfGuests = roomType?.numberOfGuests {
+            let numberOfGuests = Int(numberOfAdultsStepper.value + numberOfChildrenStepper.value)
+            var numberOfGuestsValid: String
+            if numberOfGuests > roomNumberOfGuests {
+                numberOfGuestsValid = "enumeration"
+            } else {
+                numberOfGuestsValid = ""
+            }
+            validation.giveLabelColor(adultsLabel, with: numberOfGuestsValid)
+            validation.giveLabelColor(childrenLabel, with: numberOfGuestsValid)
+
             
-            guest = Guest(firstName: firstName,
-                 lastName: lastName,
-                 email: email,
-                 checkInDate: checkInDate,
-                 checkOutDate: checkOutDate,
-                 numberOfAdults: numberOfAdults,
-                 numberOfChildren: numberOfChildren,
-                 isWifi: wifi,
-                 roomType: roomType!,
-                 totalPrice: Int(totalPrice) ?? 0
-            )
+            if firstNameValid.isEmpty &&
+                lastNameValid.isEmpty &&
+                emailValid.isEmpty &&
+                numberOfGuestsValid.isEmpty {
+                
+                guest = Guest(firstName: firstName,
+                              lastName: lastName,
+                              email: email,
+                              checkInDate: checkInDate,
+                              checkOutDate: checkOutDate,
+                              numberOfAdults: numberOfAdults,
+                              numberOfChildren: numberOfChildren,
+                              isWifi: wifi,
+                              roomType: roomType!,
+                              totalPrice: Int(totalPrice) ?? 0
+                )
+            }
         }
+        
     }
     
     @IBAction func stepperValueChanged() {

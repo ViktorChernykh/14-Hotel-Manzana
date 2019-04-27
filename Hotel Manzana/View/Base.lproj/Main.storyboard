@@ -366,7 +366,7 @@
                                         <rect key="frame" x="0.0" y="1046.5" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TpN-Qy-voi" id="i50-Uz-U1T">
-                                            <rect key="frame" x="0.0" y="0.0" width="388" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="376" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Room Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2sm-iL-rhS">
@@ -452,10 +452,12 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="adultsLabel" destination="jxx-Ey-wqw" id="XVi-cB-QDh"/>
                         <outlet property="checkInDateLabel" destination="hsl-A5-00e" id="eXe-H1-CDH"/>
                         <outlet property="checkInDatePicker" destination="UaM-nJ-kUN" id="6ZZ-VI-qIL"/>
                         <outlet property="checkOutDateLabel" destination="aHx-Ut-7EV" id="rdx-EN-aDg"/>
                         <outlet property="checkOutDatePicker" destination="kCZ-9K-ct1" id="KPu-PJ-obF"/>
+                        <outlet property="childrenLabel" destination="D2u-jE-mpY" id="a9q-4r-nvT"/>
                         <outlet property="emailField" destination="Zpk-Gx-G8N" id="FX8-9O-Dgh"/>
                         <outlet property="firstNameField" destination="7fn-qS-avf" id="6Uc-hc-LiX"/>
                         <outlet property="lastNameField" destination="6iZ-tf-PmF" id="fNs-pN-apA"/>
