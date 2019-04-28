@@ -143,29 +143,25 @@ class AddRegistrationTableViewController: UITableViewController {
         
         let validation = Validation()
         
-        let firstNameValid = validation.performValidText(firstName, type: .stringWithFirstLetterCaps)
-        let lastNameValid = validation.performValidText(lastName, type: .stringWithFirstLetterCaps)
-        let emailValid = validation.performValidText(email, type: .email)
+        let firstNameValid = validation.validationText(firstName, type: .stringWithFirstLetterCaps)
+        let lastNameValid = validation.validationText(lastName, type: .stringWithFirstLetterCaps)
+        let emailValid = validation.validationText(email, type: .email)
         
-        let choceRoomValid = validation.performValidNoNil(roomType, text: "Выберите тип комнаты")
+        let choceRoomValid = validation.validationNoNil(roomType, text: "Выберите тип комнаты")
 
         validation.giveTextFieldColor(firstNameField, with: firstNameValid)
         validation.giveTextFieldColor(lastNameField, with: lastNameValid)
         validation.giveTextFieldColor(emailField, with: emailValid)
         validation.giveLabelColor(roomLabel, with: choceRoomValid)
         
+        var numberOfGuestsValid = "_"
         if let roomNumberOfGuests = roomType?.numberOfGuests {
             let numberOfGuests = Int(numberOfAdultsStepper.value + numberOfChildrenStepper.value)
-            var numberOfGuestsValid: String
-            if numberOfGuests > roomNumberOfGuests {
-                numberOfGuestsValid = "enumeration of guest"
-            } else {
-                numberOfGuestsValid = ""
-            }
+            numberOfGuestsValid = validation.validationNumber(numberOfGuests, min: 1, max: roomNumberOfGuests, type: .rangeNumber)
+
             validation.giveLabelColor(adultsLabel, with: numberOfGuestsValid)
             validation.giveLabelColor(childrenLabel, with: numberOfGuestsValid)
 
-            
             if firstNameValid.isEmpty &&
                 lastNameValid.isEmpty &&
                 emailValid.isEmpty &&

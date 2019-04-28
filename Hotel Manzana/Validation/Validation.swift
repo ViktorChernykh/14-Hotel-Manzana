@@ -9,6 +9,14 @@
 import UIKit
 
 struct Validation {
+    enum RuleType {
+        case alphabeticStringWithSpace
+        case email
+        case password
+        case phoneNo
+        case rangeNumber
+        case stringWithFirstLetterCaps
+    }
     
     func getRule(_ type: RuleType) -> Rule {
         switch type {
@@ -20,14 +28,16 @@ struct Validation {
             return PasswordRule()
         case .phoneNo:
             return PhoneNoRule()
+        case .rangeNumber:
+            return RangeNumberRule()
         case .stringWithFirstLetterCaps:
             return StringWithFirstLetterCapsRule()
         }
     }
     
-    func performValidText(_ text: String, type: RuleType) -> String {
+    func validationText(_ text: String, type: RuleType) -> String {
         let typeRule = getRule(type)
-        guard !text.isEmpty else { return typeRule.empty }
+        if text.isEmpty { return typeRule.empty }
         
         let stringTest = NSPredicate(format: "SELF MATCHES %@", typeRule.regEx)
         let result = stringTest.evaluate(with: text)
@@ -37,17 +47,31 @@ struct Validation {
             return typeRule.failure
         }
     }
-    func performValidNoNil<T>(_ object: T?, text: String) -> String {
+    
+    func validationNoNil<T>(_ object: T?, text: String) -> String {
         guard object != nil else { return "\(text)" }
         return ""
+    }
+    
+    func validationNumber(_ number: Int, min: Int?, max: Int?, type: RuleType) -> String {
+        let typeRule = getRule(type)
+        if let min = min, number < min {
+            return typeRule.empty
+        }
+        if let max = max, number > max {
+            return typeRule.failure
+        }
+        return typeRule.success
     }
     
     func giveTextFieldColor(_ textField: UITextField, with result: String) {
         let errorColor = UIColor(red: 255, green: 0, blue: 0, alpha: 0.2)
         if result.isEmpty {
-            textField.backgroundColor = .white
+            //textField.backgroundColor = .white
+            textField.superview?.backgroundColor = .white
         } else {
-            textField.backgroundColor = errorColor
+            //textField.backgroundColor = errorColor
+            textField.superview?.backgroundColor = errorColor
         }
     }
     
