@@ -26,7 +26,7 @@
 		77AEFAE72274AA2000841160 /* StringWithFirstLetterCapsRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77AEFAE62274AA2000841160 /* StringWithFirstLetterCapsRule.swift */; };
 		77AEFAE92274B17400841160 /* GuestTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77AEFAE82274B17400841160 /* GuestTableViewController.swift */; };
 		77AEFAEB2274B3CD00841160 /* Guest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77AEFAEA2274B3CD00841160 /* Guest.swift */; };
-		77BA4A64227646AA00F08792 /* RangeNumberRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77BA4A63227646AA00F08792 /* RangeNumberRule.swift */; };
+		77BA4A64227646AA00F08792 /* RangeNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77BA4A63227646AA00F08792 /* RangeNumber.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,7 +51,7 @@
 		77AEFAE62274AA2000841160 /* StringWithFirstLetterCapsRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringWithFirstLetterCapsRule.swift; sourceTree = "<group>"; };
 		77AEFAE82274B17400841160 /* GuestTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuestTableViewController.swift; sourceTree = "<group>"; };
 		77AEFAEA2274B3CD00841160 /* Guest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Guest.swift; sourceTree = "<group>"; };
-		77BA4A63227646AA00F08792 /* RangeNumberRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RangeNumberRule.swift; sourceTree = "<group>"; };
+		77BA4A63227646AA00F08792 /* RangeNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RangeNumber.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,7 +149,7 @@
 				77AEFAE02274A53B00841160 /* EmailRule.swift */,
 				77AEFAE22274A9D700841160 /* PasswordRule.swift */,
 				77AEFAE42274A9EF00841160 /* PhoneNoRule.swift */,
-				77BA4A63227646AA00F08792 /* RangeNumberRule.swift */,
+				77BA4A63227646AA00F08792 /* RangeNumber.swift */,
 				77AEFAE62274AA2000841160 /* StringWithFirstLetterCapsRule.swift */,
 			);
 			path = Rule;
@@ -250,7 +250,7 @@
 				77AEFAE52274A9EF00841160 /* PhoneNoRule.swift in Sources */,
 				77AEFADE2274A1D300841160 /* AlphabeticStringWithSpaceRule.swift in Sources */,
 				691222142268FD96003364A8 /* AppDelegate.swift in Sources */,
-				77BA4A64227646AA00F08792 /* RangeNumberRule.swift in Sources */,
+				77BA4A64227646AA00F08792 /* RangeNumber.swift in Sources */,
 				77AEFADC2274A14E00841160 /* Rule.swift in Sources */,
 				77A881FD2273164D009F7B8A /* AddRegistration+Keyboard.swift in Sources */,
 				77AEFAE72274AA2000841160 /* StringWithFirstLetterCapsRule.swift in Sources */,

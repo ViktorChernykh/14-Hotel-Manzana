@@ -157,7 +157,7 @@ class AddRegistrationTableViewController: UITableViewController {
         var numberOfGuestsValid = "_"
         if let roomNumberOfGuests = roomType?.numberOfGuests {
             let numberOfGuests = Int(numberOfAdultsStepper.value + numberOfChildrenStepper.value)
-            numberOfGuestsValid = validation.validationNumber(numberOfGuests, min: 1, max: roomNumberOfGuests, type: .rangeNumber)
+            numberOfGuestsValid = validation.validationNumber(numberOfGuests, min: 1, max: roomNumberOfGuests, type: RangeNumber())
 
             validation.giveLabelColor(adultsLabel, with: numberOfGuestsValid)
             validation.giveLabelColor(childrenLabel, with: numberOfGuestsValid)

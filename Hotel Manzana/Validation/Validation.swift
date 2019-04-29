@@ -14,7 +14,6 @@ struct Validation {
         case email
         case password
         case phoneNo
-        case rangeNumber
         case stringWithFirstLetterCaps
     }
     
@@ -28,8 +27,6 @@ struct Validation {
             return PasswordRule()
         case .phoneNo:
             return PhoneNoRule()
-        case .rangeNumber:
-            return RangeNumberRule()
         case .stringWithFirstLetterCaps:
             return StringWithFirstLetterCapsRule()
         }
@@ -53,15 +50,14 @@ struct Validation {
         return ""
     }
     
-    func validationNumber(_ number: Int, min: Int?, max: Int?, type: RuleType) -> String {
-        let typeRule = getRule(type)
+    func validationNumber(_ number: Int, min: Int?, max: Int?, type: RangeNumber) -> String {
         if let min = min, number < min {
-            return typeRule.empty
+            return type.minFailure
         }
         if let max = max, number > max {
-            return typeRule.failure
+            return type.maxFaillure
         }
-        return typeRule.success
+        return type.success
     }
     
     func giveTextFieldColor(_ textField: UITextField, with result: String) {
