@@ -36,7 +36,15 @@ extension AddRegistrationTableViewController: UITextFieldDelegate {
 }
 
 extension AddRegistrationTableViewController {
-    @IBAction func onTapGestureRecognized(_ sender: AnyObject) {
-        activeField?.resignFirstResponder()
+    
+    func hideKeyboardWhenTapAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self,
+                                                                 action: #selector(dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
     }
 }

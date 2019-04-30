@@ -53,6 +53,8 @@ class AddRegistrationTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        hideKeyboardWhenTapAround()
+        
         firstNameField.delegate = self
         lastNameField.delegate = self
         emailField.delegate = self
@@ -144,24 +146,24 @@ class AddRegistrationTableViewController: UITableViewController {
         let validation = Validation()
         
         let firstNameValid = validation.validationText(firstName, type: .stringWithFirstLetterCaps)
-        let lastNameValid = validation.validationText(lastName, type: .stringWithFirstLetterCaps)
-        let emailValid = validation.validationText(email, type: .email)
+        let lastNameValid  = validation.validationText(lastName,  type: .stringWithFirstLetterCaps)
+        let emailValid     = validation.validationText(email,     type: .email)
         
         let choceRoomValid = validation.validationNoNil(roomType, text: "Выберите тип комнаты")
-
+        
         validation.giveTextFieldColor(firstNameField, with: firstNameValid)
         validation.giveTextFieldColor(lastNameField, with: lastNameValid)
         validation.giveTextFieldColor(emailField, with: emailValid)
         validation.giveLabelColor(roomLabel, with: choceRoomValid)
         
-        var numberOfGuestsValid = "_"
+        var numberOfGuestsValid = "error"
         if let roomNumberOfGuests = roomType?.numberOfGuests {
             let numberOfGuests = Int(numberOfAdultsStepper.value + numberOfChildrenStepper.value)
-            numberOfGuestsValid = validation.validationNumber(numberOfGuests, min: 1, max: roomNumberOfGuests, type: RangeNumber())
-
+            numberOfGuestsValid = validation.validationNumber(numberOfGuests, min: 1, max: roomNumberOfGuests, type: .rangeNumber)
+            
             validation.giveLabelColor(adultsLabel, with: numberOfGuestsValid)
             validation.giveLabelColor(childrenLabel, with: numberOfGuestsValid)
-
+            
             if firstNameValid.isEmpty &&
                 lastNameValid.isEmpty &&
                 emailValid.isEmpty &&
