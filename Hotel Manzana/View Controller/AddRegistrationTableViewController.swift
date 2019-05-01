@@ -35,6 +35,7 @@ class AddRegistrationTableViewController: UITableViewController {
     var roomType: RoomType?
     let checkInDatePickerCellIndexPath = IndexPath(row: 1, section: 1)
     let checkOutDatePickerCellIndexPath = IndexPath(row: 3, section: 1)
+    let validation = Validation()
     
     // MARK: - Computed Properties
     var isCheckInDatePickerShown = false {
@@ -53,7 +54,7 @@ class AddRegistrationTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        hideKeyboardWhenTapAround()
+        addTapGestureToHideKeyboard()
         
         firstNameField.delegate = self
         lastNameField.delegate = self
@@ -142,8 +143,6 @@ class AddRegistrationTableViewController: UITableViewController {
         print("Wi-Fi Included:", wifi)
         print("Type of room", typeOfRoom)
         print("Total Price", totalPrice)
-        
-        let validation = Validation()
         
         let firstNameValid = validation.validationText(firstName, type: .stringWithFirstLetterCaps)
         let lastNameValid  = validation.validationText(lastName,  type: .stringWithFirstLetterCaps)
@@ -247,6 +246,9 @@ extension AddRegistrationTableViewController {
             roomType = controller.selectedRoomType
             roomLabel.text = roomType!.name
             updatePrice()
+            // Update label color
+            let choceRoomValid = ResultValid(isValid: true, message: "")
+            validation.changeLabelColor(roomLabel, with: choceRoomValid)
         }
     }
     

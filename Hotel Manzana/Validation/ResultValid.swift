@@ -7,6 +7,11 @@
 //
 
 struct ResultValid {
-    var isValid: Bool = true
-    var message: String = ""
+    var isValid: Bool
+    var message: String
+    
+    init(isValid: Bool = true, message: String = "") {
+        self.isValid = isValid
+        self.message = message
+    }
 }

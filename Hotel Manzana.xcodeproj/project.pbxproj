@@ -16,7 +16,7 @@
 		69242D7D226E427D00B1AF1C /* IndexPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69242D7C226E427D00B1AF1C /* IndexPath.swift */; };
 		693DA53F226E2FB00076BCA9 /* AddRegistrationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693DA53E226E2FB00076BCA9 /* AddRegistrationTableViewController.swift */; };
 		771B3B522270ECD8008180D8 /* RoomTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771B3B512270ECD8008180D8 /* RoomTableViewController.swift */; };
-		7776CC3D2279AC5000E258B3 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7776CC3C2279AC4F00E258B3 /* Result.swift */; };
+		7776CC3D2279AC5000E258B3 /* ResultValid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7776CC3C2279AC4F00E258B3 /* ResultValid.swift */; };
 		7776CC3F2279B69700E258B3 /* NoNilRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7776CC3E2279B69700E258B3 /* NoNilRule.swift */; };
 		77A881FD2273164D009F7B8A /* AddRegistration+Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77A881FC2273164D009F7B8A /* AddRegistration+Keyboard.swift */; };
 		77AA632C2273AFD0001CA064 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77AA632B2273AFD0001CA064 /* Validation.swift */; };
@@ -43,7 +43,7 @@
 		69242D7C226E427D00B1AF1C /* IndexPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexPath.swift; sourceTree = "<group>"; };
 		693DA53E226E2FB00076BCA9 /* AddRegistrationTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRegistrationTableViewController.swift; sourceTree = "<group>"; };
 		771B3B512270ECD8008180D8 /* RoomTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomTableViewController.swift; sourceTree = "<group>"; };
-		7776CC3C2279AC4F00E258B3 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		7776CC3C2279AC4F00E258B3 /* ResultValid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultValid.swift; sourceTree = "<group>"; };
 		7776CC3E2279B69700E258B3 /* NoNilRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoNilRule.swift; sourceTree = "<group>"; };
 		77A881FC2273164D009F7B8A /* AddRegistration+Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddRegistration+Keyboard.swift"; sourceTree = "<group>"; };
 		77AA632B2273AFD0001CA064 /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
@@ -174,7 +174,7 @@
 				77BA4A652276564F00F08792 /* RuleProtocol */,
 				77AEFADF2274A1DF00841160 /* Rule */,
 				77AA632B2273AFD0001CA064 /* Validation.swift */,
-				7776CC3C2279AC4F00E258B3 /* Result.swift */,
+				7776CC3C2279AC4F00E258B3 /* ResultValid.swift */,
 			);
 			path = Validation;
 			sourceTree = "<group>";
@@ -250,7 +250,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7776CC3D2279AC5000E258B3 /* Result.swift in Sources */,
+				7776CC3D2279AC5000E258B3 /* ResultValid.swift in Sources */,
 				771B3B522270ECD8008180D8 /* RoomTableViewController.swift in Sources */,
 				691222272268FE1A003364A8 /* Registration.swift in Sources */,
 				7776CC3F2279B69700E258B3 /* NoNilRule.swift in Sources */,
