@@ -12,6 +12,7 @@ struct Validation {
     enum RuleType {
         case alphabeticStringWithSpace
         case email
+        case noNil
         case password
         case phoneNo
         case rangeNumber
@@ -24,6 +25,8 @@ struct Validation {
             return AlphabeticStringWithSpaceRule()
         case .email:
             return EmailRule()
+        case .noNil:
+            return NoNilRule()
         case .password:
             return PasswordRule()
         case .phoneNo:
@@ -35,38 +38,56 @@ struct Validation {
         }
     }
     
-    func validationText(_ text: String, type: RuleType) -> String {
+    func validationText(_ text: String, type: RuleType, massage: String? = nil) -> Result {
+        var result = Result()
         let typeRule = getRule(type)
-        if text.isEmpty { return typeRule.empty }
+        if text.isEmpty {
+            result.bool = false
+            result.message = massage ?? typeRule.empty
+            return result
+        }
         
         let stringTest = NSPredicate(format: "SELF MATCHES %@", typeRule.regEx)
-        let result = stringTest.evaluate(with: text)
-        if result {
-            return typeRule.success
-        } else {
-            return typeRule.failure
+        result.bool = stringTest.evaluate(with: text)
+        if !result.bool {
+            result.message = typeRule.failure
         }
+        return result
     }
     
-    func validationNoNil<T>(_ object: T?, text: String) -> String {
-        guard object != nil else { return "\(text)" }
-        return ""
+    func validationNoNil<T>(_ object: T?, type: RuleType, massage: String? = nil) -> Result {
+        var result = Result()
+        let typeRule = getRule(type)
+        if object == nil {
+            result.bool = false
+            result.message = massage ?? typeRule.failure
+        }
+        return result
     }
     
-    func validationNumber(_ number: Int, min: Int?, max: Int?, type: RuleType) -> String {
-        guard let typeRule = getRule(type) as? RangeNumberRule else { return "error"}
+    func validationNumber(_ number: Int, type: RuleType, min: Int? = nil, max: Int? = nil, massage: String? = nil) -> Result {
+        var result = Result()
+        
+        guard let typeRule = getRule(type) as? RangeNumberRule else {
+            result.bool = false
+            result.message = "The type \(RuleType.self) is not found"
+            return result
+        }
+        
         if let min = min, number < min {
-            return typeRule.minFailure
+            result.bool = false
+            result.message = massage ?? typeRule.minFailure
         }
         if let max = max, number > max {
-            return typeRule.maxFailure
+            result.bool = false
+            result.message = massage ?? typeRule.maxFailure
         }
-        return typeRule.success
+        return result
     }
     
-    func giveTextFieldColor(_ textField: UITextField, with result: String) {
+    func cangeTextFieldColor(_ textField: UITextField, with result: Result) {
         let errorColor = UIColor(red: 255, green: 0, blue: 0, alpha: 0.2)
-        if result.isEmpty {
+        if result.bool {
             //textField.backgroundColor = .white
             textField.superview?.backgroundColor = .white
         } else {
@@ -75,9 +96,9 @@ struct Validation {
         }
     }
     
-    func giveLabelColor(_ label: UILabel, with result: String) {
+    func changeLabelColor(_ label: UILabel, with result: Result) {
         let errorColor = UIColor(red: 255, green: 0, blue: 0, alpha: 0.2)
-        if result.isEmpty {
+        if result.bool {
             label.superview?.backgroundColor = .white
         } else {
             label.superview?.backgroundColor = errorColor

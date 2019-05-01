@@ -149,38 +149,36 @@ class AddRegistrationTableViewController: UITableViewController {
         let lastNameValid  = validation.validationText(lastName,  type: .stringWithFirstLetterCaps)
         let emailValid     = validation.validationText(email,     type: .email)
         
-        let choceRoomValid = validation.validationNoNil(roomType, text: "Выберите тип комнаты")
+        let choceRoomValid = validation.validationNoNil(roomType, type: .noNil, massage: "Выберите тип комнаты")
+
+        validation.cangeTextFieldColor(firstNameField, with: firstNameValid)
+        validation.cangeTextFieldColor(lastNameField, with: lastNameValid)
+        validation.cangeTextFieldColor(emailField, with: emailValid)
+        validation.changeLabelColor(roomLabel, with: choceRoomValid)
+
+        guard let roomNumberOfGuests = roomType?.numberOfGuests else { return }
+        let numberOfGuests = Int(numberOfAdultsStepper.value + numberOfChildrenStepper.value)
+        let numberOfGuestsValid = validation.validationNumber(numberOfGuests, type: .rangeNumber, min: 1, max: roomNumberOfGuests)
         
-        validation.giveTextFieldColor(firstNameField, with: firstNameValid)
-        validation.giveTextFieldColor(lastNameField, with: lastNameValid)
-        validation.giveTextFieldColor(emailField, with: emailValid)
-        validation.giveLabelColor(roomLabel, with: choceRoomValid)
+        validation.changeLabelColor(adultsLabel, with: numberOfGuestsValid)
+        validation.changeLabelColor(childrenLabel, with: numberOfGuestsValid)
         
-        var numberOfGuestsValid = "error"
-        if let roomNumberOfGuests = roomType?.numberOfGuests {
-            let numberOfGuests = Int(numberOfAdultsStepper.value + numberOfChildrenStepper.value)
-            numberOfGuestsValid = validation.validationNumber(numberOfGuests, min: 1, max: roomNumberOfGuests, type: .rangeNumber)
+        if firstNameValid.bool &&
+            lastNameValid.bool &&
+            emailValid.bool &&
+            numberOfGuestsValid.bool {
             
-            validation.giveLabelColor(adultsLabel, with: numberOfGuestsValid)
-            validation.giveLabelColor(childrenLabel, with: numberOfGuestsValid)
-            
-            if firstNameValid.isEmpty &&
-                lastNameValid.isEmpty &&
-                emailValid.isEmpty &&
-                numberOfGuestsValid.isEmpty {
-                
-                guest = Guest(firstName: firstName,
-                              lastName: lastName,
-                              email: email,
-                              checkInDate: checkInDate,
-                              checkOutDate: checkOutDate,
-                              numberOfAdults: numberOfAdults,
-                              numberOfChildren: numberOfChildren,
-                              isWifi: wifi,
-                              roomType: roomType!,
-                              totalPrice: Int(totalPrice) ?? 0
-                )
-            }
+            guest = Guest(firstName: firstName,
+                          lastName: lastName,
+                          email: email,
+                          checkInDate: checkInDate,
+                          checkOutDate: checkOutDate,
+                          numberOfAdults: numberOfAdults,
+                          numberOfChildren: numberOfChildren,
+                          isWifi: wifi,
+                          roomType: roomType!,
+                          totalPrice: Int(totalPrice) ?? 0
+            )
         }
         
     }
