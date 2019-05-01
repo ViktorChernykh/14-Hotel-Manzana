@@ -163,10 +163,10 @@ class AddRegistrationTableViewController: UITableViewController {
         validation.changeLabelColor(adultsLabel, with: numberOfGuestsValid)
         validation.changeLabelColor(childrenLabel, with: numberOfGuestsValid)
         
-        if firstNameValid.bool &&
-            lastNameValid.bool &&
-            emailValid.bool &&
-            numberOfGuestsValid.bool {
+        if firstNameValid.isValid &&
+            lastNameValid.isValid &&
+            emailValid.isValid &&
+            numberOfGuestsValid.isValid {
             
             guest = Guest(firstName: firstName,
                           lastName: lastName,
